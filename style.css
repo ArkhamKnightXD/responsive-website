@@ -1,0 +1,75 @@
+/*Casi siempre se utiliza esto para eliminar margin y padding sobrante*/
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: 0px;
+}
+
+/*Si queremos que varios elementos esten uno al lado de otro en vez de uno abajo del otro utilizamos display flex*/
+header{
+	display: flex;
+	width: 90%;
+	height: 10vh;
+	margin: auto;
+	align-items: center;
+}
+
+.logo-container, 
+.nav-links, 
+.cart{
+	display: flex;
+}
+
+/*Si queremos separar elementos que pertenecen al navbar una buena idea es utilziar flex 1 o 2 a mayor numero mayor separacion */
+.logo-container{
+	
+	flex: 1;
+}
+
+.logo{
+	font-weight: 400;
+}
+
+nav{
+	flex: 2;
+}
+
+/*Para justificar contenidos y agregar espacio entre ellos utilizo justify-content con space-around*/
+/*Para desactivar los puntos provenientes del tag ul se utiliza list-style none*/
+.nav-links{
+	justify-content: space-around;
+	list-style: none;
+}
+
+/*Para desactivar la decoracion del texto de los tag <a> utilizamos text-decoration note*/
+.nav-link{
+	color: gray;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.cart{
+	
+	flex: 1;
+	justify-content: flex-end;
+}
+
+.presentation{
+	display: flex;
+	width: 90%;
+	margin: auto;
+	min-height: 80vh;
+	align-items: center;
+}
+
+.introduction{
+	flex: 1;
+}
+
+.cover{
+	flex: 1;
+}
+
+.cover img{
+	height: 60vh;
+}
