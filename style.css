@@ -34,7 +34,7 @@ nav{
 	flex: 2;
 }
 
-/*Para justificar contenidos y agregar espacio entre ellos utilizo justify-content con space-around*/
+/*Para justificar contenidos y agregar espacio entre ellos utilizo justify-content con space-around esto sirve bastante a la hora de hacer responsive una pagina*/
 /*Para desactivar los puntos provenientes del tag ul se utiliza list-style none*/
 .nav-links{
 	justify-content: space-around;
@@ -66,10 +66,141 @@ nav{
 	flex: 1;
 }
 
-.cover{
-	flex: 1;
+.intro-text h1{
+	font-size: 44px;
+	font-weight: 500;
+	background: linear-gradient(to right, #494964, #6f6f89);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
+.intro-text p{
+	margin-top: 5px;
+	font-size: 22px;
+	color: #585772;
+}
+
+.cta{
+	padding: 50px 0px 0px 0px;
+}
+
+/*la propiedad de cursor indica el tipo de forma que el cursor del mouse debe de tomar, pointer indica que es un link*/
+.cta-select{
+	border: 2px, solid, #c36cbb;
+	background: transparent;
+	color: #c36cbb;
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.cta-add{
+	background: #c36cbb;
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+	font-size: 16px;
+	color: white;
+	margin: 30px 0px 0px 30px;
+}
+
+.cover{
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+/*La propieda filter junto a drop shadow sirve para agregar sombras a imagenes*/
 .cover img{
 	height: 60vh;
+	filter: drop-shadow(0px 5px 3px black);
+
+	/*Agrego la animacion definida en @keyframe*/
+	animation: drop 1.5s ease;
 }
+
+.big-circle{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: -1;
+	opacity: 0.5;
+	height: 80%;
+}
+
+.medium-circle{
+	position: absolute;
+	top: 30%;
+	right: 30%;
+	z-index: -1;
+	opacity: 0.4;
+	height: 60%;
+}
+
+.small-circle{
+	position: absolute;
+	top: 0px;
+	left: 20%;
+	z-index: -1;
+}
+
+.laptop-select{
+	width: 15%;
+	display: flex;
+	justify-content: space-around;
+	position: absolute;
+	right: 20%;
+}
+
+/*Aqui defino una animacion para que utilizarla en la imagen de la laptop*/
+@keyframes drop{
+	0%{
+		opacity: 0;
+		transform: translateY(-80px);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+/*Mobile friendly part lo que hace esto es que cuando el widht maximo no pase de 1024 ejecutara todos los estilos a las clases imdicadas en esta @media. Esta es una forma de hacer las cosas
+mobile friendly, pero algunos aconsejan que siempre empiece desarrollando la pagina para celular y luego escalarla a dispositivos mas grandes y esto que se hizo es basicamente lo contrario, pero no esta nada mal*/
+@media screen and (max-width: 1024px){
+	.presentation{
+		flex-direction: column;
+	}
+
+	.introduction{
+		margin-top: 5vh;
+		text-align: center;
+	}
+
+	.intro-text h1{
+		font-size: 30px;
+	}
+
+	.intro-text p{
+		font-size: 18px;
+	}
+
+	.cta{
+		padding: 10px, 0px 0px 0px;
+	}
+
+	.laptop-select{
+		bottom: 5%;
+		right: 50%;
+		width: 50%;
+		transform: translate(50%, 5%);
+	}
+
+	.small-circle, 
+	.medium-circle, 
+	.big-circle{
+		opacity: 0.2;
+	}
+}
+
